@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Reports>
+	<!--Reporte de vale de Refacciones Mantto Preventivo-->
+    <Report key="ValeRefacciones" path="~/Reportes/Mantenimiento/DetalleValeRefacciones.rpt">
+		<DownloadedFile name="ValeDeRefaccionMantto" ext=".pdf" />
+
+		<Dataverse>
+			<Query>SELECT * FROM VW_VALES_REFACCIONES_PREV WHERE NumValeRefacciones = @ValeRefID ORDER BY NumActividad, RefaccionId</Query>
+			<Params>
+				<Param name="ValeRefID" type="int" defaultValue="0" size="0" scale="0" precision="0"></Param>
+			</Params>
+		</Dataverse>
+
+		<Crystalverse>
+			<Params>
+			</Params>
+		</Crystalverse>    
+    </Report>
+
+	<!--Reporte de vale de Refacciones Mantto Preventivo-->
+
+  
+  <!-- Agrega más informes según sea necesario -->
+</Reports>

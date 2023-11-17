@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Connectors>
+  <Connector key="developer_mantenimiento">
+    <server coded="QQBSAEQASQBHAEkAVABBAEwAXABTAFEATAAyADAAMQA3AA=="/>
+    <database coded="SQBFAFIAUABfAEkATgBWAEUATgBUAEEAUgBJAE8AUwA="/>
+    <username coded="cwBhAA=="/>
+    <password coded="MQA3ADIAYQBjAG0AJAA="/>
+  </Connector>
+  <Connector key="produccion_mantenimiento">
+    <server coded=""/>
+    <database coded=""/>
+    <username coded=""/>
+    <password coded=""/>
+  </Connector>
+  <Connector key="ierp_ardigital">
+    <server coded="QQBSAEQASQBHAEkAVABBAEwAXABTAFEATAAyADAAMQA0AA=="/>
+    <database coded="SQBFAFIAUAA="/>
+    <username coded="cwBhAA=="/>
+    <password coded="MQA3ADIAYQBjAG0AJAA="/>
+  </Connector>
+</Connectors> 

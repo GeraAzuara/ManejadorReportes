@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ManejadorReportes.Controllers._CustomLogic;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,6 +14,7 @@ namespace ManejadorReportes.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            //JsonConvert.SerializeObject(new { reporte = "algo", reporte2 = "asi" })
             return new string[] { "value1", "value2" };
         }
 
