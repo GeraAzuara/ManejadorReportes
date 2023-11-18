@@ -175,16 +175,8 @@ namespace ManejadorReportes.Models
             }
             else
             {
-                if (potential_values == null)
-                {
-                    FeatureSqlParam.AddDetail("OK - No se esperan Parámetros SQL.");
-                    FeatureSqlParam.SetResult(true);
-                }
-                else
-                {
-                    FeatureSqlParam.AddDetail("No se esperaban Parámetros SQL.");
-                    FeatureSqlParam.SetResult(false);
-                }
+                FeatureSqlParam.AddDetail("No se esperaban Parámetros SQL.");
+                FeatureSqlParam.SetResult(potential_values.Count == 0);
             }            
             return FeatureSqlParam.GetResult();
         }
@@ -248,6 +240,14 @@ namespace ManejadorReportes.Models
             report.Load(reportFilePath);
             report.SetDataSource(datasource);
 
+            /*  Pendiente Parametricazion de Parametros Crystal */
+            //report.SetParameterValue("crys_param_01", 8);
+            //report.SetParameterValue("crys_param_01", 3.1416);
+            //report.SetParameterValue("crys_param_01", "cadena");
+            //report.SetParameterValue("crys_param_01", '#');
+            //report.SetParameterValue("crys_param_01", true);
+            /*  Pendiente Parametricazion de Parametros Crystal */
+
             Stream pdfStream = report.ExportToStream(formatFile);   // Genera el informe en memoria en formato PDF
             byte[] pdfBytes = new byte[pdfStream.Length];           // Convierte el flujo de memoria a un arreglo de bytes
             pdfStream.Read(pdfBytes, 0, (int)pdfStream.Length);
@@ -266,6 +266,15 @@ namespace ManejadorReportes.Models
             string reportFilePath = System.Web.Hosting.HostingEnvironment.MapPath(ReportPath);
             report.Load(reportFilePath);
             report.SetDataSource(FeatureQuery.GetData());
+
+
+            /*  Pendiente Parametricazion de Parametros Crystal */
+            //report.SetParameterValue("crys_param_01", 8);
+            //report.SetParameterValue("crys_param_01", 3.1416);
+            //report.SetParameterValue("crys_param_01", "cadena");
+            //report.SetParameterValue("crys_param_01", '#');
+            //report.SetParameterValue("crys_param_01", true);
+            /*  Pendiente Parametricazion de Parametros Crystal */
 
             Stream genericStream = report.ExportToStream(formatFile);       // Genera el informe en memoria en formato PDF
             byte[] fileBytes = new byte[genericStream.Length];              // Convierte el flujo de memoria a un arreglo de bytes
