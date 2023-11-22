@@ -59,7 +59,7 @@ namespace ManejadorReportes.Controllers
             else
             {
                 Generic_Report adt_report = _dispatcher.SetUpReport(model.KeyReport);
-                Generic_DBConnection adt_connector = _dispatcher.SetUpConnector(model.KeyDbConector);
+                Generic_DBConnection adt_connector = _dispatcher.SetUpConnector(model.KeyDbConnector);
 
                 if (adt_report == null || adt_connector == null)
                 {
