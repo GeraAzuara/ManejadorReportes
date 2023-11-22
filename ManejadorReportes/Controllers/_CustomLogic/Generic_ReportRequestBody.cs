@@ -17,9 +17,9 @@ namespace ManejadorReportes.Controllers._CustomLogic
         /// <summary>
         /// Clave única con la que se identifica la conexion de base de datos que utilizará un reporte.
         /// </summary>
-        [Required(ErrorMessage = "El campo KeyDbConector es obligatorio.")]
+        [Required(ErrorMessage = "El campo KeyDbConnector es obligatorio.")]
         [Description("Clave única con la que se identifica la conexion de base de datos que utilizará un reporte.")]
-        public string KeyDbConector { get; set; }
+        public string KeyDbConnector { get; set; }
 
         /// <summary>
         /// Colección de Parametros SQL que puede necesitar un reporte

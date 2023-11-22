@@ -9,6 +9,7 @@ using System.IO;
 using System.Net.Http;
 using System.Net;
 using ManejadorReportes.Controllers._CustomLogic;
+using System.Runtime.Remoting.Messaging;
 
 namespace ManejadorReportes.Models
 {
@@ -291,11 +292,11 @@ namespace ManejadorReportes.Models
         public HttpResponseMessage WriteResponse(byte[] MemoryFileObject, string typeHeaderValue = "application/pdf")
         {
             HttpResponseMessage webResponse = new HttpResponseMessage(HttpStatusCode.OK);          // Crea una respuesta HTTP con el archivo PDF
-
             webResponse.Content = new ByteArrayContent(MemoryFileObject);
             webResponse.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment");
             webResponse.Content.Headers.ContentDisposition.FileName = ReportDownloadName + "_" + DateTime.Now.ToString() + ReportExtension;
             webResponse.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue(typeHeaderValue);
+            webResponse.Headers.Add("Access-Control-Expose-Headers", "Content-Disposition");        //Exponer Nombre de Archivo en Encabezado de Respuesta
             return webResponse;
         }
         
